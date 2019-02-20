@@ -1,0 +1,56 @@
+% -*- TeX -*- -*- UK -*- -*- Soft -*-"
+
+\chapter{Installing LZMA-Archive  Packages on MikTex}
+\label{sec:miktexpackages}
+
+\section{Problem}
+
+MikTeX uses the LZMA compression tool to compress tar package files, such as \verb"fancyhdr".  For some reason my implementation of MikTeX 2.5 and 2.7 are unable to read its own compressed files (e.g. \verb"fancyhdr.tar.lzma"). This means that the package manager is unable to install such files.
+
+
+\section{Solution}
+
+On
+\verb"http://comments.gmane.org/gmane.comp.tex.miktex/6578"
+ Christian Schenk writes:
+{\small
+\begin{verbatim}
+Re: Format of new LZMA archives
+
+> just a technical question: Is there something special about the format
+> of the new .lzma archives? When I try to unpack those files with 7z
+> (v4.47 beta) it gives me an error (Can not open file as archive).
+
+The .tar.lzma files in the MiKTeX package repository were created with
+lzma.exe from the LZMA SDK (http://www.7-zip.org/sdk.html). You can run
+
+lzma d PACKAGE.tar.lzma -so | tar -xvf
+
+to extract files from a package.
+\end{verbatim}
+}
+
+In order to install packages archived with LZMA I had to resort to the following procedure:
+
+\begin{enumerate}
+\item
+Download the LZMA SDK as Schenk advises from \verb"http://www.7-zip.org/sdk.html"
+
+\item
+Rename \verb"PACKAGE.tar.lzma" to \verb"PACKAGE.lzma", where PACKAGE is the package name.
+
+\item
+Unzip the archive to a tar file with the following command
+
+\verb"lzma d PACKAGE.lzma PACKAGE.tar"
+
+\item
+Untar the tar-ball with  Winzip or whatever tool you are using, retaining the directory structure.
+
+\item
+Copy the directory structure to the MikTek directory (e.g. \verb"C:\Program Files\MiKTeX" 2.7). Take care to copy the untarred files to the appropriate directories in the MikTek directory structure.
+
+
+\end{enumerate}
+
+

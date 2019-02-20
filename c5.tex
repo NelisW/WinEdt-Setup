@@ -1,0 +1,12 @@
+% -*- TeX -*- -*- UK -*- -*- Soft -*-"
+
+\chapter{Setting ps2pdf}
+\label{sec:ps2pdf}
+
+Open the file \verb"C:\Program Files\WinEdt Team\WinEdt\Exec\TeX\ps2pdf.edt"
+and do the following change
+
+\begin{verbatim}
+  //LetReg(4,'');
+  LetReg(4, "%!4 -sPAPERSIZE=a4");
+\end{verbatim}

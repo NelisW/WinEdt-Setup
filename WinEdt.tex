@@ -1,0 +1,119 @@
+% $Id: sample.tex 20 2005-02-24 15:01:23Z jpd $
+% $HeadURL: svn://146.64.246.11/defrep/sample.tex $
+
+\documentclass[11pt,a4paper,fleqn,english]{rep03}[2004/10/08]
+%
+% The prerequisites for using this style is shown in the class file defrep03.cls
+% The CSIRLogo file .eps or .pdf must be present somewhere along the search path
+
+% uncomment if any of the following packages are used
+%\usepackage{pifont}
+%\usepackage{longtable}
+%\usepackage{rotating}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{courier}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{textcomp}
+\usepackage{acronym}
+%\usepackage{upquote}
+
+\usepackage{textcomp} % additional fonts, required for upquote in listings
+\usepackage{afterpage}
+\usepackage[T1]{fontenc}
+\usepackage{placeins} % FloatBarrier
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DRdoctitle{Setting up WinEdt,  MikTex and Friends} % title as on cover page
+\DRdocnumber{} % doc number as on all pages
+\DRdocRev{1} % doc revisions number
+\DRdodraftwater{false} % set true or false to show draft watermark
+\DRdocdate{\today} % doc date in Month Year format
+\DRfileprojno{} % File/Project Number
+\DRdocclass{}    % classification in capitals
+
+
+%the following is required for carriage return symbol
+%ftp://ftp.botik.ru/rented/znamensk/CTAN/fonts/mathabx/texinputs/mathabx.dcl
+%https://secure.kitserve.org.uk/content/mathabx-font-symbol-redefinition-clash-latex
+\DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathb}{m}{n}{
+      <5> <6> <7> <8> <9> <10> gen * mathb
+      <10.95> mathb10 <12> <14.4> <17.28> <20.74> <24.88> mathb12
+      }{}
+\DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
+\DeclareMathSymbol{\dlsh}{3}{mathb}{"EA}
+
+% set up the listings environment
+%\begin{lstlisting}[hkey=value list]
+%code here
+%\end{lstlisting}
+%\lstinline[hkey=value list]<character>source code<same character>
+%\lstinputlisting[lastline=4]{listings.sty}
+
+
+
+ \lstset{
+upquote=true, % gives the upquote instead of the curly quote
+basicstyle=\footnotesize\ttfamily, % Standardschrift
+%numbers=left,               % Ort der Zeilennummern
+numberstyle=\tiny,          % Stil der Zeilennummern
+%stepnumber=2,               % Abstand zwischen den Zeilennummern
+numbersep=5pt,              % Abstand der Nummern zum Text
+tabsize=2,                  % Groesse von Tabs
+extendedchars=true,         %
+breaklines=true,            % Zeilen werden Umgebrochen
+keywordstyle=\color{red},
+frame=b,
+stringstyle=\color{white}\ttfamily, % Farbe der String
+showspaces=false,           % Leerzeichen anzeigen ?
+showtabs=false,             % Tabs anzeigen ?
+xleftmargin=17pt,
+framexleftmargin=17pt,
+framexrightmargin=5pt,
+framexbottommargin=4pt,
+%backgroundcolor=\color{lightgray},
+showstringspaces=false      % Leerzeichen in Strings anzeigen ?
+}
+
+ \lstloadlanguages{% Check Dokumentation for further languages ...
+		%C
+		%C++
+		%XML
+		TeX
+		%Matlab
+ }
+%\DeclareCaptionFont{blue}{\color{blue}}
+%\captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+
+
+%\newcommand{\CJWpar}[2]{\parbox{#1}{\rule{0cm}{4mm}#2\rule[-2mm]{0cm}{4mm}}}
+%\newcommand{\TBC}[1]{\psframebox[linewidth=0.1pt,linestyle=dashed,fillstyle=solid,fillcolor=yellow]{#1}}
+\newcommand{\TBC}[1]{\fcolorbox{black}{yellow}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% files making up this document
+
+\includeonly{c0,c1,c2,c3,c4,c5}
+%\includeonly{c0,ca}
+%\includeonly{cc}
+
+\begin{document}
+
+\include{c0} % front matter
+\include{c1} %
+\include{c2} %
+\include{c3} %
+\include{c4} %
+\include{c5} %
+
+
+
+\end{document}

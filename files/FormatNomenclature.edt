@@ -1,0 +1,13 @@
+// -*- ASCII:EDT -*-
+
+BeginGroup;
+IfSel('0','=',>
+      'SelWord(1);>
+       IfSel(''0'',''='',>
+             ''Ins("\nomenclature{}{}");>
+               CharLeft;'',>
+             ''InsLabel("\nomenclature","{","}{}")'');',>
+       'InsLabel("\nomenclature","{","}{}");');>
+EndGroup;
+End;
+
