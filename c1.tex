@@ -8,7 +8,7 @@ This document assumes that WinEdt v.10.0 is installed.
 
 After you changed an ini file, the changes can be immediately be made available by clicking on the load button:
 
-\centerline{\includegraphics[bb= 0 0 295 388, scale=0.7]{eps/loadini.png}}
+\centerline{\includegraphics[bb= 0 0 295 388, width=0.4\textwidth]{eps/loadini.png}}
 
 After you make changes to a particular script you should use the Load Command (the first button in the Option Interface Toolbar) to make the changes effective immediately. It is not necessary to restart WinEdt. In fact, no scripts are loaded at startup: the compiled raw data is stored in WinEdt.dnt (Do Not Touch). This reduces the startup time and reduces the likelihood of error messages during startup.
 
@@ -30,20 +30,19 @@ $<$Options$>$$<$Execution Modes$>$, select 'LaTeX'. If not set, set 'Wait for ex
 Other viewers can be started in a similar manner, just select the appropriate compiler in the left-hand box, and set 'Start Viewer' in the next box.
 
 
-
-\centerline{\includegraphics[bb= 0 0 696 543, scale=0.7]{eps/StartViewer.png}}
+\centerline{\includegraphics[bb= 0 0 696 543, width=\textwidth]{eps/StartViewer.png}}
 
 In YAP go to  $<$View$>$$<$Options$>$$<$Inverse Search$>$, select WinEdt, if not yet selected. If option 'WInEdt' does not show in the dropdown box,  you have to enter the path to the application in the text box at the bottom of the dialog box.  On my installation, the entry is	\\
 {\small \verb+"C:\Program Files\WinEdt Team\WinEdt 10\winedt.exe" "[Open(|%f|);SelPar(%l,8)]"+}
 
-\centerline{\includegraphics[bb= 0 0 344 416, scale=0.7]{eps/yapinverse.png}}
+\centerline{\includegraphics[bb= 0 0 344 416, width=.6\textwidth]{eps/yapinverse.png}}
 
 
 \section{Enabling Active Strings for  begin-end Pair}
 It seems that the default settings are acceptable, no edit required. If you do need to change anything, go to
 $<$Options$>$$<$Options Interface$>$$<$Delimiters, Active Strings, ...$>$$<$Active Strings$>$, edit the macro file just opened. Edit as required and save when done.
 
-\centerline{\includegraphics[bb= 0 0 1047 346, scale=0.5]{eps/ASbegin.png}}
+\centerline{\includegraphics[bb= 0 0 1047 346, width=\textwidth]{eps/ASbegin.png}}
 
 %It seems in WinEdt9, that you must type \verb"\begin{enumerate}}", i.e. with an extra \verb"}" to %activate the active string.
 
@@ -57,7 +56,7 @@ If you require only UK English, as in in South Africa, select:\\
 \textbf{Disable the following dictionaries:}  English (Small), English (color), English (labeled), English (center), English (ize), English (yze). 
 Save the file when done.
 
-\centerline{\includegraphics[bb= 0 0 1047 386, scale=0.5]{eps/dictionary.png}}
+\centerline{\includegraphics[bb= 0 0 1047 386, width=\textwidth]{eps/dictionary.png}}
 
 If you want both the UK and US English dictionaries, keep all of the above dictionaries on. You can then select the language on a per-file basis.
 Use embedded emacs-style mode and submode commands as the first line of each file. For example, use\\
@@ -75,7 +74,7 @@ See also
 
 Activate the TeX Symbols GUI by clicking on the $\Sigma$-on-the grid symbol.
 
-\centerline{\includegraphics[bb= 0 0 1037 179,scale=0.5]{eps/texsymbolsgiu.png}}
+\centerline{\includegraphics[bb= 0 0 1037 179,width=\textwidth]{eps/texsymbolsgiu.png}}
 
 
 
@@ -83,21 +82,21 @@ Activate the TeX Symbols GUI by clicking on the $\Sigma$-on-the grid symbol.
 
 $<$Options$>$$<$Options Interface$>$$<$Editor: Mouse, Modes,...$>$$<$Defaults$>$, edit the macro file just opened. Scroll down to 'Trim Spaces' and 'Trim lines' and disable these two --- this is stop WinEdt from removing spaces at the end of lines and files.
 
-\centerline{\includegraphics[bb= 0 0 1037 288,scale=0.5]{eps/trimeoleof.png}}
+\centerline{\includegraphics[bb= 0 0 1037 288,width=\textwidth]{eps/trimeoleof.png}}
 
 
 \section{Set Text Wrapping and Text Width}
 
 $<$Options$>$$<$Options Interface$>$$<$Formatting, Wrapping, Environments....$>$$<$Wrapping$>$, edit the macro file just opened.
 
-\centerline{\includegraphics[bb= 0 0 1093 397,scale=0.5]{eps/wrapping.png}}
+\centerline{\includegraphics[bb= 0 0 1093 397,width=\textwidth]{eps/wrapping.png}}
 
 \section{Add a Table-Paste Macro to a Menu}
 \label{sec:addpastetable}
 
 $<$Options$>$$<$Options Interface$>$$<$Menus and Toolbar$>$$<$Main Menu$>$, edit the macro file just opened. Add the text shown below at the indicated location.
 
-\centerline{\includegraphics[bb= 0 0 1055 431,scale=0.5]{eps/AddExcelTable.png}}
+\centerline{\includegraphics[bb= 0 0 1055 431,width=\textwidth]{eps/AddExcelTable.png}}
 
 \begin{lstlisting}[label=MacropastetableExcel,caption=Macro to paste table from Excel]
     ITEM="Paste table from Excel"
@@ -197,7 +196,7 @@ However, MiKTeX does not support the synctex option for filenames with spaces.
 
 The solution is to open WinEdt and uncheck 'Use -synctex switch' in $<$Options$>$ $<$Execution Modes$>$$<$PDF Viewer$>$.
 
-\centerline{\includegraphics[bb= 0 0 696 543,scale=0.5]{eps/synctex.png}}
+\centerline{\includegraphics[bb= 0 0 696 543,width=0.8\textwidth]{eps/synctex.png}}
 
 In the latest installs on Windows 7 it seems that this is no longer required; there can be spaces now. Experiment and find the best solution.
 
@@ -206,7 +205,7 @@ In the latest installs on Windows 7 it seems that this is no longer required; th
 
 Disable auto-saving and keeping backup files, by $<$Options$>$ $<$Preferences$>$$<$Backup$>$ and unchecking the relevant boxes.
 
-\centerline{\includegraphics[bb= 0 0 437 457,scale=0.4]{pic/savingback.png}}
+\centerline{\includegraphics[bb= 0 0 437 457,width=0.6\textwidth]{pic/savingback.png}}
 
 
 
@@ -214,7 +213,7 @@ Disable auto-saving and keeping backup files, by $<$Options$>$ $<$Preferences$>$
 \section{Adding to TeX Symbols }
 You may want to add new buttons to the \TeX\ symbols Typeface GUI such as adding new buttons to \url{Typeface.bmp} found in \url{C:\Program Files\WinEdt Team\WinEdt 10\Bitmaps\Gui}.  It may be necessary to copy the bitmap file to \url{C:\Program Files\WinEdt Team\WinEdt 10\Bitmaps\Gui125}. I am not quite sure what the different GUI folders are used for.
 
-\centerline{\includegraphics[bb= 0 0 999 88, scale=0.5]{pic/Typeface.png}}
+\centerline{\includegraphics[bb= 0 0 999 88, width=\textwidth]{pic/Typeface.png}}
 
 Add the new buttons to the current image, taking care that you keep the new buttons the same size.
 
@@ -436,20 +435,20 @@ DVIPS converts \TeX{} DVI files into PostScript files.
 DVIPS only supports EPS files as input graphics. If you use DVIPS and you want to use PNG files, you need to use bmeps to convert the PNG to an EPS first. Fortunately bmeps is included in the MikTex DVIPS (a so-called 'bmeps enabled DVIPS' version).  Unfortunately the default WinEdt mode only converts the files to a monochrome EPS file, destroying all colour information.  The switch to convert PNG files to EPS format in colour must be set manually.
 
 Activate
-$<$Options$>$$<$Execution Modes$>$ and select the dvi2ps entry in the 'Accessories' list box. Then enter the switch \verb"-I 2cr8" in the 'Switches' textbox, as shown in the following figure.  The bmeps FAQ is located at \verb"http://bmeps.sourceforge.net/faq.html"
+$<$Options$>$$<$Execution Modes$>$ and select the \lstinline{dvi2ps} entry in the 'Accessories' list box. Then enter the switch \verb"-I 2cr8" in the 'Switches' textbox, as shown in the following figure.  The bmeps FAQ is located at \verb"http://bmeps.sourceforge.net/faq.html"
 
-\centerline{\includegraphics[bb= 0 0 696 543,scale=0.7]{eps/dvipsbmeps.png}}
+\centerline{\includegraphics[bb=0 0 696 546,width=\textwidth]{eps/dvipsbmeps.png}}
 
 \section{Enable JPG Images in DVIPS}
 
 bm2eps also converts jpeg files, just use it as follows:
 
 {\small
-\verb"\centerline{\includegraphics[bb= 0 0 288 200,scale=1]{pic/light_trap2.jpg}}"
+\verb"\centerline{\includegraphics[bb= 0 0 288 200,width=0.5\textwidth ]{pic/light_trap2.jpg}}"
 }
 
 
-\centerline{\includegraphics[bb= 0 0  288 200,scale=1]{pic/light_trap2.jpg}}
+\centerline{\includegraphics[bb= 0 0  288 200,width=0.5\textwidth]{pic/light_trap2.jpg}}
 
 
 
@@ -473,7 +472,7 @@ To set the page size in dvi2ps, add the following additional text to the dvi2ps 
 Activate
 $<$Options$>$$<$Execution Modes$>$ and select the ps2pdf entry in the 'Accessories' list box. Then change the page size as shown in the next figure. It does not make sense that the A4 should be in effect when the page size is set to default, but it does seem to work.
 
-\centerline{\includegraphics[bb= 0 0 696 543,scale=0.7]{eps/ps2pdfpagesize.png}}
+\centerline{\includegraphics[bb= 0 0 696 543,width=\textwidth]{eps/ps2pdfpagesize.png}}
 
 %Open the file \verb"C:\Program Files\WinEdt Team\WinEdt 9\Exec\TeX\ps2pdf.edt"
 %and do the following change
@@ -493,7 +492,7 @@ Sometimes you update a file externally (e.g. subversion updates the file version
 
 $<$Options$>$$<$Options Interface$>$$<$Editor: Mouse, Modes.....$>$$<$Defaults$>$, edit the macro file just opened. Set the text shown below at the indicated location.
 
-\centerline{\includegraphics[bb= 0 0 1055 352,scale=0.5]{eps/updatedrives.png}}
+\centerline{\includegraphics[bb= 0 0 1055 352,width=\textwidth]{eps/updatedrives.png}}
 
 
 

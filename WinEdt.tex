@@ -1,15 +1,21 @@
-% $Id: sample.tex 20 2005-02-24 15:01:23Z jpd $
-% $HeadURL: svn://146.64.246.11/defrep/sample.tex $
+% -*- TeX -*- -*- UK -*- -*- Soft -*-"
 
-\documentclass[11pt,a4paper,fleqn,english]{rep03}[2004/10/08]
-%
-% The prerequisites for using this style is shown in the class file defrep03.cls
-% The CSIRLogo file .eps or .pdf must be present somewhere along the search path
+\documentclass[11pt,a4paper,english]{memoir}
 
-% uncomment if any of the following packages are used
-%\usepackage{pifont}
-%\usepackage{longtable}
-%\usepackage{rotating}
+% New setup
+\setstocksize{297mm}{210mm}
+\settrimmedsize{11in}{210mm}{*}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{\stockwidth}
+\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{9.5in}{40pc}{*}
+\setulmargins{2cm}{*}{*}
+\setlrmargins{1in}{*}{*}
+\setmarginnotes{17pt}{51pt}{\onelineskip}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{2\onelineskip}{*}
+\checkandfixthelayout
+
 \usepackage{url}
 \usepackage{listings}
 \usepackage{color}
@@ -25,16 +31,16 @@
 \usepackage[T1]{fontenc}
 \usepackage{placeins} % FloatBarrier
 
+\usepackage{ifthen}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\DRdoctitle{Setting up WinEdt,  MikTex and Friends} % title as on cover page
-\DRdocnumber{} % doc number as on all pages
-\DRdocRev{1} % doc revisions number
-\DRdodraftwater{false} % set true or false to show draft watermark
-\DRdocdate{\today} % doc date in Month Year format
-\DRfileprojno{} % File/Project Number
-\DRdocclass{}    % classification in capitals
+\usepackage{graphicx}
+%\usepackage{lastpage}
 
+%\ifx\pdfoutput\undefined
+%\usepackage{pstcol}
+%\else
+%\usepackage{eso-pic}
+%\fi
 
 %the following is required for carriage return symbol
 %ftp://ftp.botik.ru/rented/znamensk/CTAN/fonts/mathabx/texinputs/mathabx.dcl
@@ -47,39 +53,30 @@
 \DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
 \DeclareMathSymbol{\dlsh}{3}{mathb}{"EA}
 
-% set up the listings environment
-%\begin{lstlisting}[hkey=value list]
-%code here
-%\end{lstlisting}
-%\lstinline[hkey=value list]<character>source code<same character>
-%\lstinputlisting[lastline=4]{listings.sty}
-
-
-
- \lstset{
+\lstset{
 upquote=true, % gives the upquote instead of the curly quote
-basicstyle=\footnotesize\ttfamily, % Standardschrift
-%numbers=left,               % Ort der Zeilennummern
-numberstyle=\tiny,          % Stil der Zeilennummern
-%stepnumber=2,               % Abstand zwischen den Zeilennummern
-numbersep=5pt,              % Abstand der Nummern zum Text
-tabsize=2,                  % Groesse von Tabs
-extendedchars=true,         %
-breaklines=true,            % Zeilen werden Umgebrochen
+basicstyle=\footnotesize\ttfamily,
+%numbers=left,
+numberstyle=\tiny,
+%stepnumber=2,
+numbersep=5pt,
+tabsize=2,
+extendedchars=true,
+breaklines=true,
 keywordstyle=\color{red},
 frame=b,
-stringstyle=\color{white}\ttfamily, % Farbe der String
-showspaces=false,           % Leerzeichen anzeigen ?
-showtabs=false,             % Tabs anzeigen ?
+stringstyle=\color{white}\ttfamily,
+showspaces=false,
+showtabs=false,   
 xleftmargin=17pt,
 framexleftmargin=17pt,
 framexrightmargin=5pt,
 framexbottommargin=4pt,
 %backgroundcolor=\color{lightgray},
-showstringspaces=false      % Leerzeichen in Strings anzeigen ?
+showstringspaces=false
 }
 
- \lstloadlanguages{% Check Dokumentation for further languages ...
+\lstloadlanguages{% Check Documentation for further languages ...
 		%C
 		%C++
 		%XML
@@ -92,22 +89,30 @@ showstringspaces=false      % Leerzeichen in Strings anzeigen ?
 \DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
 
-
-
-%\newcommand{\CJWpar}[2]{\parbox{#1}{\rule{0cm}{4mm}#2\rule[-2mm]{0cm}{4mm}}}
-%\newcommand{\TBC}[1]{\psframebox[linewidth=0.1pt,linestyle=dashed,fillstyle=solid,fillcolor=yellow]{#1}}
 \newcommand{\TBC}[1]{\fcolorbox{black}{yellow}{#1}}
+
+\newcommand*{\titleTH}{\begingroup%
+\raggedleft
+\vspace*{\baselineskip}
+{\Large C J Willers}\\[0.167\textheight]
+{\Huge Setting up WinEdt}\\[\baselineskip]
+\par
+\vfill
+\today
+%{\Large The Publisher \plogo}\par
+\vspace*{3\baselineskip}
+\endgroup}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % files making up this document
 
 \includeonly{c0,c1,c2,c3,c4,c5}
-%\includeonly{c0,ca}
-%\includeonly{cc}
+
+%\includeonly{c1}
 
 \begin{document}
-
-\include{c0} % front matter
+\titleTH
+%\include{c0} % front matter
 \include{c1} %
 \include{c2} %
 \include{c3} %
