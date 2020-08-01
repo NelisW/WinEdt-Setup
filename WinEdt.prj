@@ -4,46 +4,31 @@
 0
 1
 WinEdt.tex
-51
-1
-0
+46
+3
+2
 
 WinEdt.tex
-TeX
-403713275 0 -1 70 -1 69 150 150 691 565 0 1 229 32 -1 -1 0 0 479 -1 -1 479 1 0 69 -1  0 -1 0
+TeX:UK:Soft
+152055035 0 -1 70 -1 239 150 150 691 565 0 1 129 136 -1 -1 0 0 479 -1 -1 479 1 0 239 -1  0 -1 0
+c1.tex
+TeX:UK:Soft
+17837307 1 -1 10562 -1 10574 175 175 716 590 0 1 209 357 -1 -1 0 0 38 -1 -1 38 1 0 10574 -1  0 -1 0
+C:\Users\nelis\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\GUI.ini
+DATA:INI:EDT
+269484282 0 686 12 682 18 52 52 528 497 1 1 225 68 -1 -1 0 0 83 0 0 83 1 0 18 682  0 -1 0
 c0.tex
 TeX:UK:Soft
 286272763 0 -1 46 -1 46 50 50 591 465 0 1 40 64 -1 -1 0 0 -1 -1 -1 -1 1 0 46 -1  0 0 0
 c2.tex
 TeX:UK:Soft
 286272763 0 -1 1171 -1 1180 100 100 641 515 0 1 418 384 -1 -1 0 0 -1 -1 -1 -1 1 0 1180 -1  0 -1 0
-c1.tex
-TeX:UK:Soft
-286272763 0 -1 16901 -1 17146 175 175 716 590 0 1 264 112 -1 -1 0 0 38 -1 -1 38 1 0 17146 -1  0 -1 0
-C:\Users\NWillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\Colors.ini
-DATA:INI:EDT
-269484282 1 1374 27 1374 42 50 50 591 465 1 1 417 391 -1 -1 0 0 83 0 0 83 1 0 42 1374  0 -1 0
-:\work\Saab\ECM-trainer\git-repo\ScenarioSpec\ECM-Trainer.tex
-TeX:UK:Soft
-286272763 0 -1 0 -1 0 50 50 541 581 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
-E:\Zarchive\AppsP\TeXandFriends\Apps\editors\WinEdt\10\WinEdt10\c4.tex
-TeX:UK:Soft
-286272763 0 -1 0 -1 0 125 125 666 540 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
 c4.tex
 TeX:UK:Soft
 286272763 0 -1 0 -1 0 100 100 641 515 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
 c5.tex
 TeX
 269495547 0 -1 0 -1 0 75 75 616 490 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
-:\work\Saab\ECM-trainer\git-repo\ScenarioSpec\c3.tex
-TeX:UK:Soft
-286272763 1 -1 420 -1 416 75 75 566 606 0 1 222 192 -1 -1 0 0 -1 -1 -1 -1 1 0 416 -1  0 -1 0
-C:\Users\NWillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\Defaults.ini
-DATA:INI:EDT
-269484282 0 0 1 31 14 150 150 641 681 1 1 193 170 -1 -1 0 0 -1 -1 -1 -1 1 0 14 31  0 0 0
-C:\Users\NWillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\MainMenu.ini
-DATA:INI:EDT
-269484282 0 3328 8 2 54 200 200 691 731 1 1 513 34 -1 -1 0 0 -1 -1 -1 -1 1 0 54 2  0 -1 0
 W:\cms\docs\Bibliography\5865-OCTO-20109-01 RPT(bibliography).tex
 TeX:UK:Soft
 286272763 0 -1 4365 -1 4490 125 125 1329 396 0 1 117 208 -1 -1 0 0 37 -1 -1 37 1 0 4490 -1  0 -1 0
@@ -164,7 +149,6 @@ TeX
 
 *WinEdt.tex
 >
-*c0
 *c1
 *c2
 *c3

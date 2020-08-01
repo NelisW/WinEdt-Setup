@@ -98,6 +98,9 @@ $<$Options$>$$<$Options Interface$>$$<$Menus and Toolbar$>$$<$Main Menu$>$, edit
 
 \centerline{\includegraphics[bb= 0 0 1055 431,width=\textwidth]{eps/AddExcelTable.png}}
 
+
+The picture above shows intalling JabRef, this is optional if installed.
+
 \begin{lstlisting}[label=MacropastetableExcel,caption=Macro to paste table from Excel]
     ITEM="Paste table from Excel"
     CAPTION="Paste table from Excel..."
@@ -109,10 +112,10 @@ $<$Options$>$$<$Options Interface$>$$<$Menus and Toolbar$>$$<$Main Menu$>$, edit
 just before the \lstinline{END="&Macros"} line.
 
 
-
 Copy and paste the text in Listing~\ref{MacropastetableExcel}. If it does not work,  check the MACRO line:  take care to use the upquote (\verb+'+,  next to the Enter key) and not the curly quote (').
-
-
+Then copy the following file (\lstinline{Table Paste.edt}) from the repo to the 
+\lstinline{C:/Program Files/WinEdt Team/WinEdt 10/Macros/Samples}.
+folder.
 
 \begin{lstlisting}
     // %-*- ASCII -*- -*- EDT -*-
@@ -159,15 +162,14 @@ In the section just before Accessories, add the following:
     ITEM="Backslash to Forward"
     CAPTION="Backslash to Forward..."
     IMAGE="Table"
-    MACRO="Exe('%b\Macros\Samples\Table Paste.edt')"
+    MACRO="Exe('%b\Macros\Samples\bstofs.edt')"
     REQ_DOCUMENT=1
     REQ_FILE=0
 \end{lstlisting}
 just before the \lstinline{END="&Macros"} line.
 
-Add the file with the following contents to
-\lstinline{C:/Program Files/WinEdt Team/WinEdt 10/Macros/Samples/bstofs.edt} (or wherever you want to save it)
-
+Add the file (\lstinline{bstofs.edt}) with the following contents to
+\lstinline{C:/Program Files/WinEdt Team/WinEdt 10/Macros/Samples/bstofs.edt} 
 
 \begin{lstlisting}
 SetFindStr("\");
@@ -217,8 +219,10 @@ You may want to add new buttons to the \TeX\ symbols Typeface GUI such as adding
 
 Add the new buttons to the current image, taking care that you keep the new buttons the same size.
 
-$<$Options$>$$<$Options Interface$>$$<$Additional GUI Controls...$>$$<$TeX Symbols$>$, edit the macro file just opened. Locate this section corresponding to the Typeface part of the GUI:
+$<$Options$>$$<$Options Interface$>$$<$Additional GUI Controls...$>$$<$TeX Symbols$>$, edit the macro file just opened. Locate this section corresponding to the Typeface part of the GUI and enter one of the following blocks.
 
+
+If the Windows screen zoom is set to 125\% use this:
 \begin{lstlisting}
 PAGE="Typeface"
   CAPTION="Typeface"
@@ -265,14 +269,61 @@ PAGE="Typeface"
         MACRO="Exe('%b\Macros\Fonts\FormatNomenclature.edt');"
 \end{lstlisting}
 
+
+
+If the Windows screen zoom is set to 100\% use this:
+\begin{lstlisting}
+PAGE="Typeface"
+  CAPTION="Typeface"
+  CONFIG_FILTER=""
+  MODE_FILTER=""
+  GROUP="Typeface.bmp"
+    TOP=0
+    SPACE=0
+    ROWS=2
+    COLUMNS=8
+    WIDTH=89
+    HEIGHT=32
+    ITEM="\emph{...}"
+      MACRO="Exe('%b\Macros\Fonts\Emphasize.edt');"
+    ITEM="\textrm{...}"
+      MACRO="Exe('%b\Macros\Fonts\Roman.edt');"
+    ITEM="\textbf{...}"
+      MACRO="Exe('%b\Macros\Fonts\Bold.edt');"
+    ITEM="\textsf{...}"
+      MACRO="Exe('%b\Macros\Fonts\SansSerif.edt');"
+    ITEM="\texttt{...}"
+      MACRO="Exe('%b\Macros\Fonts\TypeWriter.edt');"
+    ITEM="\url{...}"
+        MACRO="Exe('%b\Macros\Fonts\FormatURL.edt');"
+    ITEM="\inline{...}"
+        MACRO="Exe('%b\Macros\Fonts\FormatInline.edt');"
+    ITEM="\index{...}"
+        MACRO="Exe('%b\Macros\Fonts\FormatIndex.edt');"
+    ITEM="\textmd{...}"
+      MACRO="Exe('%b\Macros\Fonts\Medium.edt');"
+    ITEM="\textit{...}"
+      MACRO="Exe('%b\Macros\Fonts\Italic.edt');"
+    ITEM="\textsc{...}"
+      MACRO="Exe('%b\Macros\Fonts\SmallCaps.edt');"
+    ITEM="\textsl{...}"
+      MACRO="Exe('%b\Macros\Fonts\Slanted.edt');"
+    ITEM="\verb""..."""
+      MACRO="Exe('%b\Macros\Fonts\Verbatim.edt');"
+    ITEM="\TBC{...}"
+        MACRO="Exe('%b\Macros\Fonts\FormatTBC.edt');"
+    ITEM="\scmnd{...}"
+        MACRO="Exe('%b\Macros\Fonts\FormatScmnd.edt');"
+    ITEM="\nomen{...}"
+        MACRO="Exe('%b\Macros\Fonts\FormatNomenclature.edt');"
+\end{lstlisting}
+
+
 It seems that you specify the number of rows and columns in the GUI and also the width and height of each button (which do not quite match up to the image size).  Change the number of columns and insert the new button's code in the appropriate location in the list (e.g. url and TBC above).
 
 After you have edited the above ini file, save the file and load the changes as shown in Section~\ref{sec:installwinedt}.
 
 Create the appropriate scripts, with the contents below, and save these in \url{C:\Program Files\WinEdt Team\WinEdt 9\Macros\Fonts\}:
-
-
-
 
 File \texttt{FormatTBC.edt}
 \begin{lstlisting}
@@ -392,8 +443,8 @@ and insert the code at the end, just before   \verb+END="Environments>"+
 
 After you have edited the above ini file, save the file and load the changes as shown in Section~\ref{sec:installwinedt}.
 
-
-
+Then copy the file \verb+env.tab+ to 
+\verb+C:\Program Files\WinEdt Team\WinEdt 10\Menus\Insert+
 
 \section{Change the Default Insert Templates}
 
