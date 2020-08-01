@@ -1,0 +1,16 @@
+SetFindStr("\");
+SetReplaceStr("/");
+SetSearchCaseSensitive(0);
+SetSearchRelaxed(0);
+SetSearchWholeWords(0);
+SetSearchInline(0);
+SetRegEx(0);
+SetSearchSelected;
+SetSearchCyclic(0);
+SetSearchForward(1);
+SetSearchEntire(0);
+SetReplaceRespectCaps(1);
+SetReplacePrompt(0);
+SearchReset;
+ReplaceAll;
+// ReplaceDialog;

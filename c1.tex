@@ -15,6 +15,7 @@ After you make changes to a particular script you should use the Load Command (t
 
 I am not quite sure how to activate the changes for the next time you start WinEdt.  It seems that exporting to WinEdt.dnt have the effect of saving the changes to that these are working next time you load WinEdt.
 
+\begin{lstlisting}
 
 \section{Viewer Setup}
 
@@ -221,10 +222,8 @@ Add the new buttons to the current image, taking care that you keep the new butt
 
 $<$Options$>$$<$Options Interface$>$$<$Additional GUI Controls...$>$$<$TeX Symbols$>$, edit the macro file just opened. Locate this section corresponding to the Typeface part of the GUI and enter one of the following blocks.
 
-
-If the Windows screen zoom is set to 125\% use this:
 \begin{lstlisting}
-PAGE="Typeface"
+  PAGE="Typeface"
   CAPTION="Typeface"
   CONFIG_FILTER=""
   MODE_FILTER=""
@@ -232,7 +231,7 @@ PAGE="Typeface"
     TOP=0
     SPACE=0
     ROWS=2
-    COLUMNS=8
+    COLUMNS=9
     WIDTH=111
     HEIGHT=32
     ITEM="\emph{...}"
@@ -250,7 +249,9 @@ PAGE="Typeface"
     ITEM="\inline{...}"
         MACRO="Exe('%b\Macros\Fonts\FormatInline.edt');"
     ITEM="\index{...}"
-        MACRO="Exe('%b\Macros\Fonts\FormatIndex.edt');"
+        MACRO="Exe('%b\Macros\Fonts\FormatIndex.edt');"   
+    ITEM="\textsup{...}"
+        MACRO="Exe('%b\Macros\Fonts\Formattextsuperscript');"   
     ITEM="\textmd{...}"
       MACRO="Exe('%b\Macros\Fonts\Medium.edt');"
     ITEM="\textit{...}"
@@ -267,55 +268,8 @@ PAGE="Typeface"
         MACRO="Exe('%b\Macros\Fonts\FormatScmnd.edt');"
     ITEM="\nomen{...}"
         MACRO="Exe('%b\Macros\Fonts\FormatNomenclature.edt');"
-\end{lstlisting}
-
-
-
-If the Windows screen zoom is set to 100\% use this:
-\begin{lstlisting}
-PAGE="Typeface"
-  CAPTION="Typeface"
-  CONFIG_FILTER=""
-  MODE_FILTER=""
-  GROUP="Typeface.bmp"
-    TOP=0
-    SPACE=0
-    ROWS=2
-    COLUMNS=8
-    WIDTH=89
-    HEIGHT=32
-    ITEM="\emph{...}"
-      MACRO="Exe('%b\Macros\Fonts\Emphasize.edt');"
-    ITEM="\textrm{...}"
-      MACRO="Exe('%b\Macros\Fonts\Roman.edt');"
-    ITEM="\textbf{...}"
-      MACRO="Exe('%b\Macros\Fonts\Bold.edt');"
-    ITEM="\textsf{...}"
-      MACRO="Exe('%b\Macros\Fonts\SansSerif.edt');"
-    ITEM="\texttt{...}"
-      MACRO="Exe('%b\Macros\Fonts\TypeWriter.edt');"
-    ITEM="\url{...}"
-        MACRO="Exe('%b\Macros\Fonts\FormatURL.edt');"
-    ITEM="\inline{...}"
-        MACRO="Exe('%b\Macros\Fonts\FormatInline.edt');"
-    ITEM="\index{...}"
-        MACRO="Exe('%b\Macros\Fonts\FormatIndex.edt');"
-    ITEM="\textmd{...}"
-      MACRO="Exe('%b\Macros\Fonts\Medium.edt');"
-    ITEM="\textit{...}"
-      MACRO="Exe('%b\Macros\Fonts\Italic.edt');"
-    ITEM="\textsc{...}"
-      MACRO="Exe('%b\Macros\Fonts\SmallCaps.edt');"
-    ITEM="\textsl{...}"
-      MACRO="Exe('%b\Macros\Fonts\Slanted.edt');"
-    ITEM="\verb""..."""
-      MACRO="Exe('%b\Macros\Fonts\Verbatim.edt');"
-    ITEM="\TBC{...}"
-        MACRO="Exe('%b\Macros\Fonts\FormatTBC.edt');"
-    ITEM="\scmnd{...}"
-        MACRO="Exe('%b\Macros\Fonts\FormatScmnd.edt');"
-    ITEM="\nomen{...}"
-        MACRO="Exe('%b\Macros\Fonts\FormatNomenclature.edt');"
+    ITEM="\textsub{...}"
+        MACRO="Exe('%b\Macros\Fonts\Formattextsubscript.edt');"
 \end{lstlisting}
 
 
@@ -323,9 +277,12 @@ It seems that you specify the number of rows and columns in the GUI and also the
 
 After you have edited the above ini file, save the file and load the changes as shown in Section~\ref{sec:installwinedt}.
 
-Create the appropriate scripts, with the contents below, and save these in \url{C:\Program Files\WinEdt Team\WinEdt 9\Macros\Fonts\}:
+Create the appropriate scripts, with the contents below, and save these in \url{C:\Program Files\WinEdt Team\WinEdt 10\Macros\Fonts\}:
 
-File \texttt{FormatTBC.edt}
+
+---------------------------------------
+
+File \texttt{FormatIndex.edt}
 \begin{lstlisting}
 // -*- ASCII:EDT -*-
 
@@ -333,29 +290,14 @@ BeginGroup;
 IfSel('0','=',>
       'SelWord(1);>
        IfSel(''0'',''='',>
-             ''Ins("\TBC{}");>
+             ''Ins("\index{}");>
                CharLeft;'',>
-             ''InsLabel("\TBC","{","}")'');',>
-      'InsLabel("\TBC","{","}");');
+             ''InsLabel("\index","{","}")'');',>
+      'InsLabel("\index","{","}");');
 EndGroup;
 End;
 \end{lstlisting}
 
-Filename \texttt{FormatURL.edt}
-\begin{lstlisting}
-// -*- ASCII:EDT -*-
-
-BeginGroup;
-IfSel('0','=',>
-      'SelWord(1);>
-       IfSel(''0'',''='',>
-             ''Ins("\url{}");>
-               CharLeft;'',>
-             ''InsLabel("\url","{","}")'');',>
-      'InsLabel("\url","{","}");');
-EndGroup;
-End;
-\end{lstlisting}
 
 Filename \texttt{FormatInline.edt}
 \begin{lstlisting}
@@ -373,6 +315,21 @@ EndGroup;
 End;
 \end{lstlisting}
 
+Filename \texttt{FormatNomenclature.edt}
+\begin{lstlisting}
+// -*- ASCII:EDT -*-
+
+  BeginGroup;
+IfSel('0','=',>
+      'SelWord(1);>
+       IfSel(''0'',''='',>
+             ''Ins("\nomenclature{}{}");>
+               CharLeft;'',>
+             ''InsLabel("\nomenclature","{","}{}")'');',>
+       'InsLabel("\nomenclature","{","}{}");');>
+EndGroup;
+End;
+\end{lstlisting}
 
 Filename \texttt{FormatScmnd.edt}
 \begin{lstlisting}
@@ -390,24 +347,71 @@ EndGroup;
 End;
 \end{lstlisting}
 
-
-
+File \texttt{FormatTBC.edt}
+\begin{lstlisting}
 // -*- ASCII:EDT -*-
 
-Filename \texttt{FormatNomenclature.edt}
-\begin{lstlisting}
 BeginGroup;
 IfSel('0','=',>
       'SelWord(1);>
        IfSel(''0'',''='',>
-             ''Ins("\nomenclature{}{}");>
+             ''Ins("\TBC{}");>
                CharLeft;'',>
-             ''InsLabel("\nomenclature","{","}{}")'');',>
-       'InsLabel("\nomenclature","{","}{}");');>
+             ''InsLabel("\TBC","{","}")'');',>
+      'InsLabel("\TBC","{","}");');
 EndGroup;
 End;
 \end{lstlisting}
 
+
+Filename \texttt{Formattextsubscript.edt}
+\begin{lstlisting}
+  // -*- ASCII:EDT -*-
+
+  BeginGroup;
+  IfSel('0','=',>
+        'SelWord(1);>
+         IfSel(''0'',''='',>
+               ''Ins("\textsubscript{}");>
+                 CharLeft;'',>
+               ''InsLabel("\textsubscript","{","}")'');',>
+        'InsLabel("\textsubscript","{","}");');
+  EndGroup;
+  End;
+\end{lstlisting}
+
+
+Filename \texttt{Formattextsuperscript.edt}
+\begin{lstlisting}
+  // -*- ASCII:EDT -*-
+
+  BeginGroup;
+  IfSel('0','=',>
+        'SelWord(1);>
+         IfSel(''0'',''='',>
+               ''Ins("\textsuperscript{}");>
+                 CharLeft;'',>
+               ''InsLabel("\textsuperscript","{","}")'');',>
+        'InsLabel("\textsuperscript","{","}");');
+  EndGroup;
+  End;
+\end{lstlisting}
+
+Filename \texttt{FormatURL.edt}
+\begin{lstlisting}
+// -*- ASCII:EDT -*-
+
+BeginGroup;
+IfSel('0','=',>
+      'SelWord(1);>
+       IfSel(''0'',''='',>
+             ''Ins("\url{}");>
+               CharLeft;'',>
+             ''InsLabel("\url","{","}")'');',>
+      'InsLabel("\url","{","}");');
+EndGroup;
+End;
+\end{lstlisting}
 
 
 Download and install the following macro:\\
@@ -525,7 +529,7 @@ $<$Options$>$$<$Execution Modes$>$ and select the ps2pdf entry in the 'Accessori
 
 \centerline{\includegraphics[bb= 0 0 696 543,width=\textwidth]{eps/ps2pdfpagesize.png}}
 
-%Open the file \verb"C:\Program Files\WinEdt Team\WinEdt 9\Exec\TeX\ps2pdf.edt"
+%Open the file \verb"C:\Program Files\WinEdt Team\WinEdt 10Exec\TeX\ps2pdf.edt"
 %and do the following change
 %
 %\begin{verbatim}
