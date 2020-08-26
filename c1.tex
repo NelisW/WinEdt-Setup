@@ -15,8 +15,6 @@ After you make changes to a particular script you should use the Load Command (t
 
 I am not quite sure how to activate the changes for the next time you start WinEdt.  It seems that exporting to WinEdt.dnt have the effect of saving the changes to that these are working next time you load WinEdt.
 
-\begin{lstlisting}
-
 \section{Viewer Setup}
 
 Yap seemed to fail on my WinEdt install.
@@ -33,15 +31,27 @@ Other viewers can be started in a similar manner, just select the appropriate co
 
 \centerline{\includegraphics[bb= 0 0 696 543, width=\textwidth]{eps/StartViewer.png}}
 
+
+
 In YAP go to  $<$View$>$$<$Options$>$$<$Inverse Search$>$, select WinEdt, if not yet selected. If option 'WInEdt' does not show in the dropdown box,  you have to enter the path to the application in the text box at the bottom of the dialog box.  On my installation, the entry is	\\
 {\small \verb+"C:\Program Files\WinEdt Team\WinEdt 10\winedt.exe" "[Open(|%f|);SelPar(%l,8)]"+}
 
 \centerline{\includegraphics[bb= 0 0 344 416, width=.6\textwidth]{eps/yapinverse.png}}
 
 
+
+
+These PDF viewers are currently available on my PC:
+\begin{lstlisting}
+C:\Program Files\Tracker Software\PDF Viewer\PDFXCview.exe
+C:\Program Files\PDF Architect 7\architect.exe
+C:\Users\nwillers\AppData\Local\SumatraPDF\SumatraPDF.exe
+\end{lstlisting}
+
+
 \section{Enabling Active Strings for  begin-end Pair}
 It seems that the default settings are acceptable, no edit required. If you do need to change anything, go to
-$<$Options$>$$<$Options Interface$>$$<$Delimiters, Active Strings, ...$>$$<$Active Strings$>$, edit the macro file just opened. Edit as required and save when done.
+$<$Options$>$$<$Options Interface$>$$<$Delimiters, Active Strings, ...$>$$<$Active Strings$>$, edit the macro file just opened to enable \verb+"\begin{?}}"+. It might already be activated. Edit as required and save when done.
 
 \centerline{\includegraphics[bb= 0 0 1047 346, width=\textwidth]{eps/ASbegin.png}}
 
@@ -52,14 +62,8 @@ $<$Options$>$$<$Options Interface$>$$<$Delimiters, Active Strings, ...$>$$<$Acti
 $<$Options$>$$<$Options Interface$>$$<$Dictionary Manager:....$>$$<$Word Lists (.)...$>$, edit the macro file just opened.  You enable or disable
 sub-dictionaries according to your requirement.
 
-If you require only UK English, as in in South Africa, select:\\
-\textbf{Enable the following dictionaries:} User (Addon), EDT, LaTeX, WinEdt, English (common),  English (colour),  English (labelled),  English (centre), English (ise),  English  (yse).\\
-\textbf{Disable the following dictionaries:}  English (Small), English (color), English (labeled), English (center), English (ize), English (yze). 
-Save the file when done.
 
-\centerline{\includegraphics[bb= 0 0 1047 386, width=\textwidth]{eps/dictionary.png}}
-
-If you want both the UK and US English dictionaries, keep all of the above dictionaries on. You can then select the language on a per-file basis.
+If you want both the UK and US English dictionaries, keep all of the below dictionaries on. You can then select the language on a per-file basis.
 Use embedded emacs-style mode and submode commands as the first line of each file. For example, use\\
 \verb"% -*- TeX -*- -*- US -*- -*- Soft -*-" for US spelling, or\\
 \verb"% -*- TeX -*- -*- UK -*- -*- Soft -*-" for UK spelling in the tex file.\\
@@ -69,6 +73,15 @@ See also
 \url{https://www.gnu.org/software/emacs/manual/html_node/emacs/Specifying-File-Variables.html}
 \url{https://www.gnu.org/software/emacs/manual/html_node/emacs/Choosing-Modes.html}
 \end{lstlisting}
+
+
+If you require only UK English, as in in South Africa, select:\\
+\textbf{Enable the following dictionaries:} User (Addon), EDT, LaTeX, WinEdt, English (common),  English (colour),  English (labelled),  English (centre), English (ise),  English  (yse).\\
+\textbf{Disable the following dictionaries:}  English (Small), English (color), English (labeled), English (center), English (ize), English (yze).
+Save the file when done.
+
+\centerline{\includegraphics[bb= 0 0 1047 386, width=\textwidth]{eps/dictionary.png}}
+
 
 
 \section{TeX Symbols GUI}
@@ -81,7 +94,7 @@ Activate the TeX Symbols GUI by clicking on the $\Sigma$-on-the grid symbol.
 
 \section{Keep Whitespace at EOF and EOL}
 
-$<$Options$>$$<$Options Interface$>$$<$Editor: Mouse, Modes,...$>$$<$Defaults$>$, edit the macro file just opened. Scroll down to 'Trim Spaces' and 'Trim lines' and disable these two --- this is stop WinEdt from removing spaces at the end of lines and files.
+$<$Options$>$$<$Options Interface$>$$<$Editor: Mouse, Modes,...$>$$<$Defaults$>$, edit the macro file just opened. Scroll down to 'Trim Spaces' and 'Trim lines' and disable these two (make the values 0) --- this is stop WinEdt from removing spaces at the end of lines and files.
 
 \centerline{\includegraphics[bb= 0 0 1037 288,width=\textwidth]{eps/trimeoleof.png}}
 
@@ -89,16 +102,19 @@ $<$Options$>$$<$Options Interface$>$$<$Editor: Mouse, Modes,...$>$$<$Defaults$>$
 \section{Set Text Wrapping and Text Width}
 
 $<$Options$>$$<$Options Interface$>$$<$Formatting, Wrapping, Environments....$>$$<$Wrapping$>$, edit the macro file just opened.
+Switch on or off if required and set the right margin. Defaults work fine in WinEdt 10.
 
 \centerline{\includegraphics[bb= 0 0 1093 397,width=\textwidth]{eps/wrapping.png}}
 
 \section{Add a Table-Paste Macro to a Menu}
 \label{sec:addpastetable}
 
-$<$Options$>$$<$Options Interface$>$$<$Menus and Toolbar$>$$<$Main Menu$>$, edit the macro file just opened. Add the text shown below at the indicated location.
+$<$Options$>$$<$Options Interface$>$$<$Menus and Toolbar$>$$<$Main Menu$>$, edit the macro file just opened. Add the text shown below at the indicated location just before the \lstinline{END="&Macros"} line.
+
 
 \centerline{\includegraphics[bb= 0 0 1055 431,width=\textwidth]{eps/AddExcelTable.png}}
 
+This picture does not shown the \lstinline{END="&Macros"} line It is required).
 
 The picture above shows intalling JabRef, this is optional if installed.
 
@@ -110,12 +126,13 @@ The picture above shows intalling JabRef, this is optional if installed.
     REQ_DOCUMENT=1
     REQ_FILE=0
 \end{lstlisting}
-just before the \lstinline{END="&Macros"} line.
 
+Copy and paste [best to do this from the LaTeX source file] the text in Listing~\ref{MacropastetableExcel}. If it does not work,  check the MACRO line:  take care to use the upquote (\verb+'+,  next to the Enter key) and not the curly quote (').
 
-Copy and paste the text in Listing~\ref{MacropastetableExcel}. If it does not work,  check the MACRO line:  take care to use the upquote (\verb+'+,  next to the Enter key) and not the curly quote (').
-Then copy the following file (\lstinline{Table Paste.edt}) from the repo to the 
-\lstinline{C:/Program Files/WinEdt Team/WinEdt 10/Macros/Samples}.
+Then copy the following file (\lstinline{Table Paste.edt}) from the repo \lstinline{files} folder  (copy all three edt files)
+ to the
+\lstinline{C:/Program Files/WinEdt Team/WinEdt 10/Macros/Samples} or\\
+\lstinline{C:/Users/nwillers/WinEdt Team/WinEdt 10/Macros/Samples}
 folder.
 
 \begin{lstlisting}
@@ -155,7 +172,7 @@ folder.
 \section{Add a Back Slash to Forward Slash Macro to a Menu}
 \label{sec:bsfs}
 
-$<$Options$>$$<$Options Interface$>$$<$Menus and Toolbar$>$
+$<$Options$>$$<$Options Interface$>$$<$Menus and Toolbar$>$$<$Main Menu$>$
 
 Search down for the entry labelled \lstinline{MENU="&Accessories"}.
 In the section just before Accessories, add the following:
@@ -170,7 +187,7 @@ In the section just before Accessories, add the following:
 just before the \lstinline{END="&Macros"} line.
 
 Add the file (\lstinline{bstofs.edt}) with the following contents to
-\lstinline{C:/Program Files/WinEdt Team/WinEdt 10/Macros/Samples/bstofs.edt} 
+\lstinline{C:/Program Files/WinEdt Team/WinEdt 10/Macros/Samples/bstofs.edt}
 
 \begin{lstlisting}
 SetFindStr("\");
@@ -214,13 +231,24 @@ Disable auto-saving and keeping backup files, by $<$Options$>$ $<$Preferences$>$
 
 
 \section{Adding to TeX Symbols }
-You may want to add new buttons to the \TeX\ symbols Typeface GUI such as adding new buttons to \url{Typeface.bmp} found in \url{C:\Program Files\WinEdt Team\WinEdt 10\Bitmaps\Gui}.  It may be necessary to copy the bitmap file to \url{C:\Program Files\WinEdt Team\WinEdt 10\Bitmaps\Gui125}. I am not quite sure what the different GUI folders are used for.
+You may want to add new buttons to the \TeX\ symbols Typeface GUI.
+Rename the existing \url{Typeface.bmp} to \url{Typeface-old.bmp} in the following folders, and then add the new (bigger) \url{Typeface.bmp} from the repo \url{files} folder to the same GUI folders. Copy the appropriately sized bitmap according to the folder structure.
+
 
 \centerline{\includegraphics[bb= 0 0 999 88, width=\textwidth]{pic/Typeface.png}}
 
-Add the new buttons to the current image, taking care that you keep the new buttons the same size.
+\noindent
+\url{C:\Program Files\WinEdt Team\WinEdt 10\Bitmaps\Gui}\\
+\url{C:\Program Files\WinEdt Team\WinEdt 10\Bitmaps\Gui125}\\
+\url{C:\Program Files\WinEdt Team\WinEdt 10\Bitmaps\Gui200}\\
+or (replace with your user name)\\
+\url{C:\Users\nwillers\WinEdt Team\WinEdt 10\Bitmaps\Gui}\\
+\url{C:\Users\nwillers\WinEdt Team\WinEdt 10\Bitmaps\Gui125}\\
+\url{C:\Users\nwillers\WinEdt Team\WinEdt 10\Bitmaps\Gui200}\\
 
-$<$Options$>$$<$Options Interface$>$$<$Additional GUI Controls...$>$$<$TeX Symbols$>$, edit the macro file just opened. Locate this section corresponding to the Typeface part of the GUI and enter one of the following blocks.
+
+
+$<$Options$>$$<$Options Interface$>$$<$Additional GUI Controls...$>$$<$TeX Symbols$>$, edit the macro file just opened. Locate this section corresponding to the Typeface part of the GUI and replace the entire block with the following block:
 
 \begin{lstlisting}
   PAGE="Typeface"
@@ -249,9 +277,9 @@ $<$Options$>$$<$Options Interface$>$$<$Additional GUI Controls...$>$$<$TeX Symbo
     ITEM="\inline{...}"
         MACRO="Exe('%b\Macros\Fonts\FormatInline.edt');"
     ITEM="\index{...}"
-        MACRO="Exe('%b\Macros\Fonts\FormatIndex.edt');"   
+        MACRO="Exe('%b\Macros\Fonts\FormatIndex.edt');"
     ITEM="\textsup{...}"
-        MACRO="Exe('%b\Macros\Fonts\Formattextsuperscript');"   
+        MACRO="Exe('%b\Macros\Fonts\Formattextsuperscript');"
     ITEM="\textmd{...}"
       MACRO="Exe('%b\Macros\Fonts\Medium.edt');"
     ITEM="\textit{...}"
@@ -272,15 +300,27 @@ $<$Options$>$$<$Options Interface$>$$<$Additional GUI Controls...$>$$<$TeX Symbo
         MACRO="Exe('%b\Macros\Fonts\Formattextsubscript.edt');"
 \end{lstlisting}
 
+If required, you can add even more new buttons to the current image, but it is somewhat tricky. Take care that you keep the new buttons the same size. Also add the code for the new buttons as shown above.
 
 It seems that you specify the number of rows and columns in the GUI and also the width and height of each button (which do not quite match up to the image size).  Change the number of columns and insert the new button's code in the appropriate location in the list (e.g. url and TBC above).
 
 After you have edited the above ini file, save the file and load the changes as shown in Section~\ref{sec:installwinedt}.
 
-Create the appropriate scripts, with the contents below, and save these in \url{C:\Program Files\WinEdt Team\WinEdt 10\Macros\Fonts\}:
+Either copy the \lstinline{edt} files from the repo folder \lstinline{files/Macros/Fonts} to the installation folder
+\lstinline{Macros/Fonts}. Alternatively reconstruct the files from the following text. Create the appropriate scripts, with the contents below, and save these in \url{Macros/Fonts/}:
 
 
----------------------------------------
+\begin{lstlisting}
+--- old 555x88 96 ppi  new 999x88 72 ppi
+
+125 old  520x56 168ppi new
+
+200 old  800x88 168ppi new  1798x88 72 ppi
+\end{lstlisting}
+
+
+
+
 
 File \texttt{FormatIndex.edt}
 \begin{lstlisting}
@@ -414,10 +454,7 @@ End;
 \end{lstlisting}
 
 
-Download and install the following macro:\\
-\url{http://www.winedt.org/Macros/LaTeX/indexedt.php} (link no longer works)
-
-Download and install the following macro:\\
+If you are using nomenclature download and install the following macro:\\
 \url{http://www.winedt.org/config/menus/Nomenclature.html}
 
 \section{Adding New Environments to Insert Menu}
@@ -434,7 +471,7 @@ $<$Options$>$$<$Options Interface$>$$<$Menu and Toolbar...$>$$<$Main Menu$>$, ed
       REQ_DOCUMENT=1
 \end{lstlisting}
 
-and insert the code at the end, just before   \verb+END="Environments>"+
+and insert the code to create new listings at the end, just before   \verb+END="Environments>"+
 
 \begin{lstlisting}
     ITEM="-"
@@ -447,8 +484,8 @@ and insert the code at the end, just before   \verb+END="Environments>"+
 
 After you have edited the above ini file, save the file and load the changes as shown in Section~\ref{sec:installwinedt}.
 
-Then copy the file \verb+env.tab+ to 
-\verb+C:\Program Files\WinEdt Team\WinEdt 10\Menus\Insert+
+Then copy the file \verb+env.tab+  from the repo \lstinline{files} folder to
+\lstinline{Menus/Insert}
 
 \section{Change the Default Insert Templates}
 
@@ -458,6 +495,8 @@ Modify any of the templates in this directory to suit your needs.  The text inse
 
 
 \section{Add a Macro to Activate Jabref}
+
+If you are using Jabref:
 
 Using the same procedure as described in Section~\ref{sec:addpastetable}, create a new menu entry and paste the following code into the 'Macro' box (all on one line):
 
@@ -483,69 +522,11 @@ where the reference to Jabref must be to the jar file, as installed on your PC.
 }
 
 
-\section{Enable Colour PNG in DVIPS}
-
-DVIPS converts \TeX{} DVI files into PostScript files.
-
-DVIPS only supports EPS files as input graphics. If you use DVIPS and you want to use PNG files, you need to use bmeps to convert the PNG to an EPS first. Fortunately bmeps is included in the MikTex DVIPS (a so-called 'bmeps enabled DVIPS' version).  Unfortunately the default WinEdt mode only converts the files to a monochrome EPS file, destroying all colour information.  The switch to convert PNG files to EPS format in colour must be set manually.
-
-Activate
-$<$Options$>$$<$Execution Modes$>$ and select the \lstinline{dvi2ps} entry in the 'Accessories' list box. Then enter the switch \verb"-I 2cr8" in the 'Switches' textbox, as shown in the following figure.  The bmeps FAQ is located at \verb"http://bmeps.sourceforge.net/faq.html"
-
-\centerline{\includegraphics[bb=0 0 696 546,width=\textwidth]{eps/dvipsbmeps.png}}
-
-\section{Enable JPG Images in DVIPS}
-
-bm2eps also converts jpeg files, just use it as follows:
-
-{\small
-\verb"\centerline{\includegraphics[bb= 0 0 288 200,width=0.5\textwidth ]{pic/light_trap2.jpg}}"
-}
-
-
-\centerline{\includegraphics[bb= 0 0  288 200,width=0.5\textwidth]{pic/light_trap2.jpg}}
-
-
-
-
-\section{Control Font Download to the PS File}
-
-In the previous graph the dvi2ps application is also instructed to download the `standard Adobe' fonts to the PS file, by entering the option
-
-\lstinline{ -Pdownload35}
-
-
-\section{Setting up the Page Size for dvi2ps}
-
-To set the page size in dvi2ps, add the following additional text to the dvi2ps switches:
-
-\lstinline{-I 2cr8 -Pdownload35 -O -0mm,0mm  -t A4}
-
-
-\section{Setting up the Page Size for ps2pdf}
-
-Activate
-$<$Options$>$$<$Execution Modes$>$ and select the ps2pdf entry in the 'Accessories' list box. Then change the page size as shown in the next figure. It does not make sense that the A4 should be in effect when the page size is set to default, but it does seem to work.
-
-\centerline{\includegraphics[bb= 0 0 696 543,width=\textwidth]{eps/ps2pdfpagesize.png}}
-
-%Open the file \verb"C:\Program Files\WinEdt Team\WinEdt 10Exec\TeX\ps2pdf.edt"
-%and do the following change
-%
-%\begin{verbatim}
-%  //LetReg(4,'');
-%  LetReg(4, "%!4 -sPAPERSIZE=a4");
-%\end{verbatim}
-
-
-
-
-
 \section{Enable File Update Warnings}
 
 Sometimes you update a file externally (e.g. subversion updates the file version) and you want to be warned of this event.
 
-$<$Options$>$$<$Options Interface$>$$<$Editor: Mouse, Modes.....$>$$<$Defaults$>$, edit the macro file just opened. Set the text shown below at the indicated location.
+$<$Options$>$$<$Options Interface$>$$<$Editor: Mouse, Modes.....$>$$<$Defaults$>$, edit the macro file just opened. Confirm that the values are set to 1 as  shown below at the indicated location.
 
 \centerline{\includegraphics[bb= 0 0 1055 352,width=\textwidth]{eps/updatedrives.png}}
 
@@ -556,16 +537,21 @@ $<$Options$>$$<$Options Interface$>$$<$Editor: Mouse, Modes.....$>$$<$Defaults$>
 
 
 
-$<$Options$>$$<$Options Interface$>$$<$Application: Projects, Forms, ....$>$$<$Additional Preferences$>$, near line 54 set the value.
+$<$Options$>$$<$Options Interface$>$$<$Application: Projects, Forms, ....$>$$<$Additional Preferences$>$, near line 62 set the value to 0:
 
-Open an instance of WinEdt on the commandline with the following:
+\begin{lstlisting}
+// Rather than disabling this option use -C command switch!
+RUN_ONE_INSTANCE_ONLY=1
+\end{lstlisting}
+
+Or as suggested, leave this at 1 and just open an instance of WinEdt on the commandline with the following:
 
 WinEdt -C="window title"
 
 
 \section{Colour Theme}
 
-To set a colour theme select from the 
+To set a colour theme select from the
 $<$Options$>$$<$Theme$>$$<$ menu.  If this does not work, experiment with \\
 $<$Options$>$$<$Options Interface$>$$<$Highlighting, Colors ...$>$$<$Colors$>$. Scroll to \lstinline{Solarized Light} and uncomment the theme you require, and comment out all those not required.  Now it is a bit of a hit-and-miss using the menu options and selecting \lstinline{Default} from an empty list, to get the scheme to work.
 

@@ -2,6 +2,69 @@
 
 \chapter{Setting DVIPS}
 
+\section{DVIPS settings}
+
+If you are using DVIPS: do the following.
+
+
+\subsection{Enable Colour PNG in DVIPS}
+
+DVIPS converts \TeX{} DVI files into PostScript files.
+
+DVIPS only supports EPS files as input graphics. If you use DVIPS and you want to use PNG files, you need to use bmeps to convert the PNG to an EPS first. Fortunately bmeps is included in the MikTex DVIPS (a so-called 'bmeps enabled DVIPS' version).  Unfortunately the default WinEdt mode only converts the files to a monochrome EPS file, destroying all colour information.  The switch to convert PNG files to EPS format in colour must be set manually.
+
+Activate
+$<$Options$>$$<$Execution Modes$>$ and select the \lstinline{dvi2ps} entry in the 'Accessories' list box. Then enter the switch \verb"-I 2cr8" in the 'Switches' textbox, as shown in the following figure.  The bmeps FAQ is located at \verb"http://bmeps.sourceforge.net/faq.html"
+
+\centerline{\includegraphics[bb=0 0 696 546,width=\textwidth]{eps/dvipsbmeps.png}}
+
+\subsection{Enable JPG Images in DVIPS}
+
+bm2eps also converts jpeg files, just use it as follows:
+
+{\small
+\verb"\centerline{\includegraphics[bb= 0 0 288 200,width=0.5\textwidth ]{pic/light_trap2.jpg}}"
+}
+
+
+\centerline{\includegraphics[bb= 0 0  288 200,width=0.5\textwidth]{pic/light_trap2.jpg}}
+
+
+
+
+\subsection{Control Font Download to the PS File}
+
+In the previous graph the dvi2ps application is also instructed to download the `standard Adobe' fonts to the PS file, by entering the option
+
+\lstinline{ -Pdownload35}
+
+
+\subsection{Setting up the Page Size for dvi2ps}
+
+To set the page size in dvi2ps, add the following additional text to the dvi2ps switches:
+
+\lstinline{-I 2cr8 -Pdownload35 -O -0mm,0mm  -t A4}
+
+
+\subsection{Setting up the Page Size for ps2pdf}
+
+Activate
+$<$Options$>$$<$Execution Modes$>$ and select the ps2pdf entry in the 'Accessories' list box. Then change the page size as shown in the next figure. It does not make sense that the A4 should be in effect when the page size is set to default, but it does seem to work.
+
+\centerline{\includegraphics[bb= 0 0 696 543,width=\textwidth]{eps/ps2pdfpagesize.png}}
+
+%Open the file \verb"C:\Program Files\WinEdt Team\WinEdt 10Exec\TeX\ps2pdf.edt"
+%and do the following change
+%
+%\begin{verbatim}
+%  //LetReg(4,'');
+%  LetReg(4, "%!4 -sPAPERSIZE=a4");
+%\end{verbatim}
+
+
+
+
+
 
 \section{PostScript Specials and Security}
 
