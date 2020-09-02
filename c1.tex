@@ -548,6 +548,7 @@ Or as suggested, leave this at 1 and just open an instance of WinEdt on the comm
 
 WinEdt -C="window title"
 
+It is not clear why but some installations can open WinEdt without having the PATH setting to the executable.
 
 \section{Colour Theme}
 
@@ -555,6 +556,71 @@ To set a colour theme select from the
 $<$Options$>$$<$Theme$>$$<$ menu.  If this does not work, experiment with \\
 $<$Options$>$$<$Options Interface$>$$<$Highlighting, Colors ...$>$$<$Colors$>$. Scroll to \lstinline{Solarized Light} and uncomment the theme you require, and comment out all those not required.  Now it is a bit of a hit-and-miss using the menu options and selecting \lstinline{Default} from an empty list, to get the scheme to work.
 
+
+\section{LaTeXify}
+
+\url{http://www.winedt.org/config/menus/LaTeXify.html}
+
+This package adds a few items to the TeX menu, giving the user the chance to run an automated compilation by simply typing a shortcut or pressing a toolbar button.  Download and upzip, open \lstinline{Install.edt } in WnEdt. The run the macro  by choosing $<$Macros$>$ | $<$Execute Current Macro$>$.  You can launch your automated compilation from the TeX menu or the toolbar or typing one of the following shortcuts:
+
+Biber (runs Biber) Shortcut: Ctrl+Alt+B\\
+PDFLaTeXify (runs Biber and PDFTeXify with PDFLaTeX engine) Shortcut: Ctrl+Alt+P
+
+\section{Executing Biber}
+
+Intall LaTeXify as described above. Biber should be available on the menu $<$ Tex$>$|$<$ Biber$>$.
+
+Biber may however not be available as a button on the toolbar. Open
+$<$Options$>$$<$Options Interface$>$$<$Menus and Toolbar$>$$<$Toolbar$>$, this should open \lstinline{toolbar.ini}. 
+Scroll down to near line 120, to the text the looks this this:
+
+\begin{lstlisting}
+// Alternatives:
+// =============
+//
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar1l.ini" // 1-row Toolbar (Large)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar1s.ini" // 1-row Toolbar (Small)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar1c.ini" // 1-row Toolbar (Custom)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar2l.ini" // 2-row Toolbar (Large)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar2s.ini" // 2-row Toolbar (Small)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar2c.ini" // 2-row Toolbar (Custom)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar5x.ini" // 2-row (WinEdt 5-style) Toolbar
+\end{lstlisting}
+
+Uncomment and double click on the line containing the toolbar you want to use, e.g.,  2-row Toolbar (Large).
+
+\begin{lstlisting}
+// Alternatives:
+// =============
+//
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar1l.ini" // 1-row Toolbar (Large)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar1s.ini" // 1-row Toolbar (Small)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar1c.ini" // 1-row Toolbar (Custom)
+   %%INCLUDE="ConfigEx\Toolbars\Toolbar2l.ini" // 2-row Toolbar (Large)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar2s.ini" // 2-row Toolbar (Small)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar2c.ini" // 2-row Toolbar (Custom)
+// %%INCLUDE="ConfigEx\Toolbars\Toolbar5x.ini" // 2-row (WinEdt 5-style) Toolbar
+\end{lstlisting}
+
+This will open \lstinline{Toolbar2l.ini}. Scroll down to the Bibtex entry near line 206.  Add a new biber button entry as follows, just before the BibTex entry.
+
+\begin{lstlisting}
+    MENU="-"
+    MENU="XeLaTeX"
+    MENU="XeTeX"
+  BUTTON="|"
+  BUTTON="Biber"
+  BUTTON="BibTeX"
+  BUTTON="Make_Index"
+\end{lstlisting}
+
+Now save the file and then run the command $<$Options$>$$<$Maintenance$>$$<$Rebuild All$>$.
+
+If not yet selected, select the large 2-row toolbar in the menu
+$<$Options$>$$<$Toolbar$>$$<$2-row large$>$ to select the newly-updated toolbar.  The biber button should now the visible.
+
+
+\lstinline{https://tex.stackexchange.com/questions/316798/winedt-latexify-macro-install-fails-to-install-toolbar-buttons}
 
 \section{See also}
 
