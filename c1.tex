@@ -259,7 +259,7 @@ $<$Options$>$$<$Options Interface$>$$<$Additional GUI Controls...$>$$<$TeX Symbo
     TOP=0
     SPACE=0
     ROWS=2
-    COLUMNS=9
+    COLUMNS=10
     WIDTH=111
     HEIGHT=32
     ITEM="\emph{...}"
@@ -280,6 +280,8 @@ $<$Options$>$$<$Options Interface$>$$<$Additional GUI Controls...$>$$<$TeX Symbo
         MACRO="Exe('%b\Macros\Fonts\FormatIndex.edt');"
     ITEM="\textsup{...}"
         MACRO="Exe('%b\Macros\Fonts\Formattextsuperscript');"
+    ITEM="\sout{...}"
+        MACRO="Exe('%b\Macros\Fonts\FormatSout');"
     ITEM="\textmd{...}"
       MACRO="Exe('%b\Macros\Fonts\Medium.edt');"
     ITEM="\textit{...}"
@@ -291,13 +293,15 @@ $<$Options$>$$<$Options Interface$>$$<$Additional GUI Controls...$>$$<$TeX Symbo
     ITEM="\verb""..."""
       MACRO="Exe('%b\Macros\Fonts\Verbatim.edt');"
     ITEM="\TBC{...}"
-        MACRO="Exe('%b\Macros\Fonts\FormatTBC.edt');"
+        MACRO="Exe('%b\Macros\Fonts\FormatTBB.edt');"
     ITEM="\scmnd{...}"
         MACRO="Exe('%b\Macros\Fonts\FormatScmnd.edt');"
     ITEM="\nomen{...}"
         MACRO="Exe('%b\Macros\Fonts\FormatNomenclature.edt');"
     ITEM="\textsub{...}"
         MACRO="Exe('%b\Macros\Fonts\Formattextsubscript.edt');"
+    ITEM="\textcolor{...}"
+        MACRO="Exe('%b\Macros\Fonts\FormatTextColor.edt');"
 \end{lstlisting}
 
 If required, you can add even more new buttons to the current image, but it is somewhat tricky. Take care that you keep the new buttons the same size. Also add the code for the new buttons as shown above.

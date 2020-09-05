@@ -1,0 +1,13 @@
+// -*- ASCII:EDT -*-
+
+BeginGroup;
+IfSel('0','=',>
+      'SelWord(1);>
+       IfSel(''0'',''='',>
+             ''Ins("\textcolor{red}{}");>
+               CharLeft;'',>
+             ''InsLabel("\textcolor","{red}{","}")'');',>
+       'InsLabel("\textcolor","{red}{","}");');>
+EndGroup;
+End;
+
