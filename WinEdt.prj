@@ -4,22 +4,25 @@
 0
 1
 WinEdt.tex
-8
-4
+9
+2
 1
 
 WinEdt.tex
 TeX:UK:Soft
-152055035 0 2 29 -1 239 150 150 691 565 0 1 182 100 -1 -1 0 0 479 -1 -1 479 1 0 239 -1  0 -1 0
+152055035 0 -1 70 -1 239 150 150 691 565 0 1 182 100 -1 -1 0 0 479 -1 -1 479 1 0 239 -1  0 -1 0
 c1.tex
 TeX:UK:Soft
-286272763 0 -1 24178 -1 23945 175 175 716 590 0 1 1514 500 -1 -1 0 0 38 -1 -1 38 1 0 23945 -1  0 -1 0
-C:\Users\nwillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\Toolbar.ini
-DATA:INI:EDT
-1048826 1 129 13 129 6 132 132 1769 877 1 1 206 312 -1 -1 0 0 -1 -1 -1 -1 1 0 6 129  0 -1 0
+286272763 0 -1 12250 -1 11566 175 175 716 590 0 1 158 100 -1 -1 0 0 38 -1 -1 38 1 0 11566 -1  0 -1 0
 C:\Users\nwillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\Toolbars\Toolbar2l.ini
 DATA:INI:EDT
-1048826 1 201 1 208 1 176 176 1813 921 1 1 136 650 -1 -1 0 0 -1 -1 -1 -1 1 0 1 208  0 -1 0
+269484282 1 201 1 208 1 176 176 1813 921 1 1 136 650 -1 -1 0 0 83 0 0 83 1 0 1 208  0 -1 0
+C:\Users\nwillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\GUI.ini
+DATA:INI:EDT
+269484282 0 674 1 724 60 88 88 951 1153 1 1 962 1482 -1 -1 0 0 -1 -1 -1 -1 1 0 60 724  0 -1 0
+C:\Users\nwillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\Toolbar.ini
+DATA:INI:EDT
+269484282 1 129 13 129 6 132 132 1769 877 1 1 206 312 -1 -1 0 0 83 0 0 83 1 0 6 129  0 -1 0
 c0.tex
 TeX:UK:Soft
 286272763 0 -1 46 -1 46 50 50 591 465 0 1 40 64 -1 -1 0 0 -1 -1 -1 -1 1 0 46 -1  0 0 0
