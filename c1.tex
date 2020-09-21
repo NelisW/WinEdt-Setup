@@ -545,7 +545,7 @@ The GUI is defined by the file \\
 or try this one\\
 \lstinline{WinEdt Team/WinEdt 10/Exec/Erase Working Files.edt}, which can be adapted for your needs.
 
-In the following changed file the items to remove mw files is added and the sync file is set to be ticked by default:
+In the following changed file the items to remove mw files is added and all sync files is set to be ticked by default:
 
 \begin{lstlisting}
 // Erase Working Files Interface
@@ -562,7 +562,7 @@ In the following changed file the items to remove mw files is added and the sync
     ClearFileItems;
 
     AddFileItem(0,"PDF File","%N.pdf","TeX");
-    AddFileItem(1,"SYNC File","%N.synctex.*","TeX");
+    AddFileItem(1,"SYNC File","*.synctex.*","TeX");
 
     AddFileItem(1,"DVI File","%N.dvi","TeX");
     AddFileItem(1,"PS  File","%N.ps","TeX");
