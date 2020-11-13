@@ -129,7 +129,7 @@ The picture above shows intalling JabRef, this is optional if installed.
 
 Copy and paste [best to do this from the LaTeX source file] the text in Listing~\ref{MacropastetableExcel}. If it does not work,  check the MACRO line:  take care to use the upquote (\verb+'+,  next to the Enter key) and not the curly quote (').
 
-Then copy the following file (\lstinline{Table Paste.edt}) from the repo \lstinline{files} folder  (copy all three edt files)
+If does not already exists: copy the following file (\lstinline{Table Paste.edt}) from the repo \lstinline{files} folder  (copy all three edt files)
  to the
 \lstinline{C:/Program Files/WinEdt Team/WinEdt 10/Macros/Samples} or\\
 \lstinline{C:/Users/nwillers/WinEdt Team/WinEdt 10/Macros/Samples}
@@ -570,7 +570,10 @@ In the following changed file the items to remove mw files is added and all sync
     AddFileItem(1,"LOG Files","*.log","");
     AddFileItem(1,"AUX Files","*.aux","TeX");
     AddFileItem(1,"BBL Files","*.bbl","TeX");
+    AddFileItem(1,"BIT Files","*.bit","TeX");
     AddFileItem(1,"BLG Files","*.blg","TeX");
+    AddFileItem(1,"BCF Files","*.bcf","TeX");
+    AddFileItem(1,"BRF Files","*.brf","TeX");
     AddFileItem(1,"IDX Files","*.idx","TeX");
     AddFileItem(1,"IND Files","*.ind","TeX");
     AddFileItem(1,"ILG Files","*.ilg","TeX");
@@ -581,6 +584,31 @@ In the following changed file the items to remove mw files is added and all sync
     AddFileItem(1,"LOT Files","*.lot","TeX");
     AddFileItem(1,"TOC Files","*.toc","TeX");
     AddFileItem(1,"OUT Files","*.out","TeX");
+    AddFileItem(1,"TBB Files","*.tbb","TeX");
+    AddFileItem(1,"TBC Files","*.tbc","TeX");
+    AddFileItem(1,"x.pdf Files","*x.pdf","TeX");
+    AddFileItem(1,"MW Files","*.mw","TeX");
+    AddFileItem(1,"fdb_latexmk Files","*.fdb_latexmk","TeX");
+
+    AddFileItem(1,"fls Files","*.fls","TeX");
+    AddFileItem(1,"glsdefs Files","*.glsdefs","TeX");
+    AddFileItem(1,"glx Files","*.glx","TeX");
+    AddFileItem(1,"gxg Files","*.gxg","TeX");
+    AddFileItem(1,"gxs Files","*.gxs","TeX");
+    AddFileItem(1,"ist Files","*.ist","TeX");
+    AddFileItem(1,"loa Files","*.loa","TeX");
+    AddFileItem(1,"lol Files","*.lol","TeX");
+    AddFileItem(1,"maf Files","*.maf","TeX");
+    AddFileItem(1,"mtc Files","*.mtc","TeX");
+    AddFileItem(1,"pag Files","*.pag","TeX");
+    AddFileItem(1,".run.xml Files","*.run.xml","TeX");
+    AddFileItem(1,"snm Files","*.snm","TeX");
+    AddFileItem(1,"tdo Files","*.tdo","TeX");
+    AddFileItem(1,"tns Files","*.tns","TeX");
+    AddFileItem(1,"vtc Files","*.vtc","TeX");
+    AddFileItem(1,"url Files","*.url","TeX");
+    AddFileItem(1,"synctex Files","*.synctex","TeX");
+    AddFileItem(1,"comment.cut","comment.cut","TeX");
 
     AddFileItem(1,"MPX Files","*.mpx","MetaPost");
 
@@ -588,6 +616,8 @@ In the following changed file the items to remove mw files is added and all sync
     AddFileItem(1,"SAV Files","*.sav","");
     AddFileItem(1,"TMP Files","*.tmp","");
     AddFileItem(1,"MW Files","*.mw","TeX");
+
+
 
     AddFileItem(1,"TEMP Files","_temp.*","TeX");
 
@@ -632,7 +662,7 @@ PDFLaTeXify (runs Biber and PDFTeXify with PDFLaTeX engine) Shortcut: Ctrl+Alt+P
 Intall LaTeXify as described above. Biber should be available on the menu $<$ Tex$>$|$<$ Biber$>$.
 
 Biber may however not be available as a button on the toolbar. Open
-$<$Options$>$$<$Options Interface$>$$<$Menus and Toolbar$>$$<$Toolbar$>$, this should open \lstinline{toolbar.ini}. 
+$<$Options$>$$<$Options Interface$>$$<$Menus and Toolbar$>$$<$Toolbar$>$, this should open \lstinline{toolbar.ini}.
 Scroll down to near line 120, to the text the looks this this:
 
 \begin{lstlisting}
