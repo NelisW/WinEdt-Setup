@@ -4,37 +4,28 @@
 0
 1
 WinEdt.tex
-9
-2
+6
+3
 1
 
 WinEdt.tex
 TeX:UK:Soft
-152055035 0 -1 70 -1 239 150 150 691 565 0 1 182 100 -1 -1 0 0 479 -1 -1 479 1 0 239 -1  0 -1 0
+152055035 0 -1 0 -1 0 176 176 1200 1134 1 1 131 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
 c1.tex
 TeX:UK:Soft
-286272763 0 -1 23227 -1 23282 175 175 716 590 0 1 50 625 -1 -1 0 0 38 -1 -1 38 1 0 23282 -1  0 -1 0
-C:\Users\nwillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\Toolbars\Toolbar2l.ini
+286272763 0 -1 25140 -1 25162 220 220 1244 1178 1 1 131 644 -1 -1 0 0 -1 -1 -1 -1 1 0 25162 -1  0 -1 0
+C:\Users\nwillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\SpellingErrors.ini
 DATA:INI:EDT
-269484282 1 201 1 208 1 176 176 1813 921 1 1 136 650 -1 -1 0 0 83 0 0 83 1 0 1 208  0 -1 0
-C:\Users\nwillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\GUI.ini
+1048826 1 40 8 12 1 132 132 1156 1090 1 1 136 312 -1 -1 0 0 83 0 0 83 1 0 1 12  0 0 0
+:\Work\Radiometry\EO-measurement-procedure\c03.tex
+TeX:UK:Soft
+286272763 0 -1 676 -1 676 44 44 1068 1002 0 1 53 168 -1 -1 0 0 -1 -1 -1 -1 1 0 676 -1  0 -1 0
+:\Work\Radiometry\EO-measurement-procedure\EO-measurement-procedure.tex
+TeX:UK:Soft
+17837307 0 -1 0 -1 183 0 0 1024 958 0 1 300 224 -1 -1 0 0 -1 -1 -1 -1 1 0 183 -1  0 -1 0
+C:\Users\nwillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\Errors.ini
 DATA:INI:EDT
-269484282 0 674 1 724 60 88 88 951 1153 1 1 962 1482 -1 -1 0 0 -1 -1 -1 -1 1 0 60 724  0 -1 0
-C:\Users\nwillers\AppData\Roaming\WinEdt Team\WinEdt 10\ConfigEx\Toolbar.ini
-DATA:INI:EDT
-269484282 1 129 13 129 6 132 132 1769 877 1 1 206 312 -1 -1 0 0 83 0 0 83 1 0 6 129  0 -1 0
-c0.tex
-TeX:UK:Soft
-286272763 0 -1 46 -1 46 50 50 591 465 0 1 40 64 -1 -1 0 0 -1 -1 -1 -1 1 0 46 -1  0 0 0
-c2.tex
-TeX:UK:Soft
-286272763 0 -1 1171 -1 1180 100 100 641 515 0 1 418 384 -1 -1 0 0 -1 -1 -1 -1 1 0 1180 -1  0 -1 0
-c4.tex
-TeX:UK:Soft
-286272763 0 -1 0 -1 0 100 100 641 515 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
-c5.tex
-TeX
-269495547 0 -1 0 -1 0 75 75 616 490 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
+269484282 0 0 1 0 1 88 88 1112 1046 1 1 136 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 -1 0
 
 *WinEdt.tex
 >

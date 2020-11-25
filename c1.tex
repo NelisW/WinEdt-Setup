@@ -641,11 +641,29 @@ WinEdt -C="window title"
 
 It is not clear why but some installations can open WinEdt without having the PATH setting to the executable.
 
-\section{Colour Theme}
+\section{Colour Theme and Font}
 
 To set a colour theme select from the
 $<$Options$>$$<$Theme$>$$<$ menu.  If this does not work, experiment with \\
 $<$Options$>$$<$Options Interface$>$$<$Highlighting, Colors ...$>$$<$Colors$>$. Scroll to \lstinline{Solarized Light} and uncomment the theme you require, and comment out all those not required.  Now it is a bit of a hit-and-miss using the menu options and selecting \lstinline{Default} from an empty list, to get the scheme to work.
+
+
+Set the font to consolas, it reads easier than courier.
+
+\section{Set Spelling Error Underline}
+
+To increase the boldness of the spelling error underline select from the
+$<$Options$>$$<$Options Interface$>$$<$Dictionary: Words Lists, Spelling...$>$$<$Missspelled words$>$. 
+
+
+\begin{lstlisting}
+[MISSPELLED_WORDS]
+...
+UNDERLINE_WEIGHT=+9 // -9=light .. 0=normal .. +9=heavy
+...
+BOLD=1
+...
+\end{lstlisting}
 
 
 \section{LaTeXify}
@@ -716,5 +734,3 @@ $<$Options$>$$<$Toolbar$>$$<$2-row large$>$ to select the newly-updated toolbar.
 \section{See also}
 
 \url{http://nakhmani.wordpress.com/2010/09/28/winedt-6-configuration/#more-44}
-
-
